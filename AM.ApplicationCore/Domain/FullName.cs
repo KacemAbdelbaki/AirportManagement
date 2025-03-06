@@ -1,7 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using Microsoft.EntityFrameworkCore;
 
 namespace AM.ApplicationCore.Domain
 {
+    [Owned]
     public class FullName
     {
         [MaxLength(25, ErrorMessage = "max length: 25")]

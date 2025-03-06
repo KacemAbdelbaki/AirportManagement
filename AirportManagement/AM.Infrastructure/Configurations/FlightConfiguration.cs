@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using AM.ApplicationCore.Domain;
+﻿using AM.ApplicationCore.Domain;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -21,7 +16,7 @@ namespace AM.Infrastructure.Configurations
             // Config OneToMany
             builder.HasOne(f => f.Plane)
                 .WithMany(p => p.Flights)
-                .HasForeignKey(f => f.Plane.PlaneId)
+                .HasForeignKey(f => f.PlaneId)
                 .OnDelete(DeleteBehavior.Cascade);
         }
     }
